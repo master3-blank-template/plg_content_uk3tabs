@@ -11,3 +11,23 @@ Tabs of content based on the UIkit framework 3. Content plugin for Joomla! 3
 The plugin contains the basic settings implemented in the UIkit 3 framework, necessary for displaying full-fledged tabs.
 
 **Attention!** The plugin does not contain scripts and framework styles, connect them yourself in your template (it is assumed that your template is already based on this framework).
+
+## Usage
+
+Indert into content editor:
+
+```
+{tab Title 1}
+
+Your content is inside the "Title 1" tab
+
+{tab Title 2}
+
+Your content is inside the "Title 2" tab
+
+{/tab}
+```
+
+HTML tags immediately adjacent to the shortcodes in curly braces will be cut.
+
+Multiple tabs blocks per page are supported. Nested tabs are not supported.

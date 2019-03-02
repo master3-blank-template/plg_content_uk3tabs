@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.7" type="plugin" group="content" method="upgrade">
+	<name>PLG_CONTENT_UK3TABS</name>
+	<version>1.0.0</version>
+	<creationDate>March 2019</creationDate>
+	<author>Aleksey A. Morozov</author>
+	<authorEmail>alekvolsk@yandex.ru</authorEmail>
+	<authorUrl>https://alekvolsk.pw/</authorUrl>
+	<copyright>(C) 2019 Aleksey A. Morozov. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt</license>
+	<description>PLG_UK3TABS_XML_DESCRIPTION</description>
+    <scriptfile>script.php</scriptfile>
+	<files>
+		<filename plugin="uk3tabs">uk3tabs.php</filename>
+        <folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">languages/en-GB/en-GB.plg_content_uk3tabs.ini</language>
+		<language tag="en-GB">languages/en-GB/en-GB.plg_content_uk3tabs.sys.ini</language>
+		<language tag="ru-RU">languages/ru-RU/ru-RU.plg_content_uk3tabs.ini</language>
+		<language tag="ru-RU">languages/ru-RU/ru-RU.plg_content_uk3tabs.sys.ini</language>
+	</languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="tabs_class" type="text" label="PLG_UK3TABS_CLASS" default="" class="input-xlarge" />
+                <field name="title_class" type="text" label="PLG_UK3TABS_TITLE_CLASS" default="" class="input-xlarge" />
+                <field name="position" type="list" label="PLG_UK3TABS_POSITION" default="top" class="input-xlarge">
+                    <option value="top">PLG_UK3TABS_POSITION_TOP</option>
+                    <option value="bottom">PLG_UK3TABS_POSITION_BOTTOM</option>
+                    <option value="left">PLG_UK3TABS_POSITION_LEFT</option>
+                    <option value="right">PLG_UK3TABS_POSITION_RIGHT</option>
+                </field>
+                <field name="align" type="list" label="PLG_UK3TABS_ALIGNMENT" default="left" class="input-xlarge">
+                    <option value="left">PLG_UK3TABS_ALIGN_LEFT</option>
+                    <option value="right">PLG_UK3TABS_ALIGN_RIGHT</option>
+                    <option value="center">PLG_UK3TABS_ALIGN_CENTER</option>
+                    <option value="justify">PLG_UK3TABS_ALIGN_JUSTYFY</option>
+                    <option value="width">PLG_UK3TABS_ALIGN_WIDTH</option>
+                </field>
+                <field name="content_class" type="text" label="PLG_UK3TABS_CONTENT_CLASS" default="" class="input-xlarge" />
+                <field name="swiping" type="radio" label="PLG_UK3TABS_SWIPING" description="PLG_UK3TABS_SWIPING_DESC" default="1" class="btn-group">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="media" type="text" label="PLG_UK3TABS_MEDIA" description="PLG_UK3TABS_MEDIA_DESC" default="@s" class="input-xlarge" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

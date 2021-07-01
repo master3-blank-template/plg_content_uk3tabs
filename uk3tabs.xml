@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.7" type="plugin" group="content" method="upgrade">
-	<name>PLG_CONTENT_UK3TABS</name>
-	<version>1.0.0</version>
-	<creationDate>March 2019</creationDate>
-	<author>Aleksey A. Morozov</author>
-	<authorEmail>alekvolsk@yandex.ru</authorEmail>
-	<authorUrl>https://alekvolsk.pw/</authorUrl>
-	<copyright>(C) 2019 Aleksey A. Morozov. All rights reserved.</copyright>
-	<license>GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt</license>
-	<description>PLG_UK3TABS_XML_DESCRIPTION</description>
+    <name>PLG_CONTENT_UK3TABS</name>
+    <version>1.1.0</version>
+    <creationDate>July 2021</creationDate>
+    <author>Aleksey A. Morozov</author>
+    <authorEmail>alekvolsk@yandex.ru</authorEmail>
+    <authorUrl>https://alekvolsk.pw/</authorUrl>
+    <copyright>(C) Aleksey A. Morozov. All rights reserved.</copyright>
+    <license>GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt</license>
+    <description>PLG_UK3TABS_XML_DESCRIPTION</description>
     <scriptfile>script.php</scriptfile>
-	<files>
-		<filename plugin="uk3tabs">uk3tabs.php</filename>
+    <files>
+        <filename plugin="uk3tabs">uk3tabs.php</filename>
+        <folder>assets</folder>
         <folder>tmpl</folder>
-	</files>
-	<languages>
-		<language tag="en-GB">languages/en-GB/en-GB.plg_content_uk3tabs.ini</language>
-		<language tag="en-GB">languages/en-GB/en-GB.plg_content_uk3tabs.sys.ini</language>
-		<language tag="ru-RU">languages/ru-RU/ru-RU.plg_content_uk3tabs.ini</language>
-		<language tag="ru-RU">languages/ru-RU/ru-RU.plg_content_uk3tabs.sys.ini</language>
-	</languages>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_content_uk3tabs.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_content_uk3tabs.sys.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.plg_content_uk3tabs.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.plg_content_uk3tabs.sys.ini</language>
+    </languages>
     <config>
         <fields name="params">
             <fieldset name="basic">

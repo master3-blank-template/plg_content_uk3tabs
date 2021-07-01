@@ -2,13 +2,15 @@
 /**
  * @package     Joomla.Plugin
  * @subpackage  Content.uk3tabs
- * @copyright   Copyright (C) 2019 Aleksey A. Morozov. All rights reserved.
+ * @copyright   Copyright (C) Aleksey A. Morozov. All rights reserved.
  * @license     GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
+use Joomla\CMS\Factory;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\CMS\Filesystem\Path;
+use Joomla\CMS\Filter\OutputFilter;
 
 class PlgContentUk3tabs extends CMSPlugin
 {
@@ -81,6 +83,7 @@ class PlgContentUk3tabs extends CMSPlugin
         }
 
         if ($matches) {
+            Factory::getDocument()->addScript('/plugins/content/uk3tabs/assets/plguktabs.js');
             $tabsCount = 0;
             $tabsFirst = true;
             foreach ($matches[0] as $match) {
@@ -101,6 +104,8 @@ class PlgContentUk3tabs extends CMSPlugin
                 if ($tabs[$tabsCount] == 1) {
 
                     $title = preg_replace('|{tab\s(.*)}|U', '\\1', $match);
+                    $title = strip_tags($title);
+                    $tab_id = 'tab-' . OutputFilter::stringURLSafe($title);
                     $tab_active = ' class="uk-active"';
                     ob_start();
                     include $layout . '_title_start.php';
@@ -120,6 +125,8 @@ class PlgContentUk3tabs extends CMSPlugin
                 } elseif ($tabs[$tabsCount] == 2) {
 
                     $title = preg_replace('|{tab\s(.*)}|U', '\\1', $match);
+                    $title = strip_tags($title);
+                    $tab_id = 'tab-' . OutputFilter::stringURLSafe($title);
                     $tab_active = '';
                     ob_start();
                     include $layout . '_title_li.php';
@@ -146,7 +153,7 @@ class PlgContentUk3tabs extends CMSPlugin
                     include $layout . '_content_end.php';
                     $tabs_content = ob_get_clean() . ($position === 'bottom' || $position === 'right' ? "titles_$id" : '');
 
-                    $article->text = preg_replace('/{\/tab}/U', $tabs_content, $article->text, 1);
+                    $article->text = preg_replace('|{/tab}|U', $tabs_content, $article->text, 1);
                     $article->text = str_replace("titles_$id", $tabs_titles, $article->text);
 
                     $tabsFirst = true;

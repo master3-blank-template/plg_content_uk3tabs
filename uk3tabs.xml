@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.7" type="plugin" group="content" method="upgrade">
     <name>PLG_CONTENT_UK3TABS</name>
-    <version>1.1.0</version>
-    <creationDate>July 2021</creationDate>
+    <version>1.1.1</version>
+    <creationDate>January 2022</creationDate>
     <author>Aleksey A. Morozov</author>
     <authorEmail>alekvolsk@yandex.ru</authorEmail>
     <authorUrl>https://alekvolsk.pw/</authorUrl>

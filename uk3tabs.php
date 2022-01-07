@@ -118,7 +118,7 @@ class PlgContentUk3tabs extends CMSPlugin
                     include $layout . '_content_li_start.php';
                     $tabs_content = ($position === 'top' || $position === 'left' ? "titles_$id" : '') . ob_get_clean();
 
-                    $article->text = preg_replace('/' . preg_quote($match) . '/U', $tabs_content, $article->text, 1);
+                    $article->text = preg_replace('/' . str_replace(['/', '?'], ['\/', '\?'], preg_quote($match)) . '/U', $tabs_content, $article->text, 1);
 
                     $tabsFirst = false;
 
@@ -138,7 +138,7 @@ class PlgContentUk3tabs extends CMSPlugin
                     include $layout . '_content_li_start.php';
                     $tabs_content = ob_get_clean();
 
-                    $article->text = preg_replace('/' . preg_quote($match) . '/U', $tabs_content, $article->text, 1);
+                    $article->text = preg_replace('/' . str_replace(['/', '?'], ['\/', '\?'], preg_quote($match)) . '/U', $tabs_content, $article->text, 1);
 
                     $tabsFirst = false;
 
